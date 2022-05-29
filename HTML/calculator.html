@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/calculator.css">
+
+     <!--Icons Link-->
+     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Energy Tracking System</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="navbar">
+           <!--<img src="/Images/logo_1_46.jpg" alt=""  class="logo">--> 
+           <h1 class="logo"> NEW ERA<span> SOFTWARE</span> </h1>
+            <nav>
+                <ul id="menuList">
+                    <li> <a href="/HTML/index.html">Home </a></li>
+                    <li> <a href="/HTML/calculator.html">Calculator </a></li>
+                    <li> <a href="/HTML/log_in.html">Log in </a></li>
+                    <li> <a href="/HTML/help.html">Help </a></li>
+                </ul>
+
+            </nav>
+            <img src="/Images/menu_33.jpg" alt=""  class="menu-icon" onclick="togglemenu()">
+        </div>
+
+        <h1>Calculate Energy</h1>
+    
+   <span>Distance:</span> <input type ="number" id="Distance" value="0" min="0"><span> km</span>
+   <br>
+   <br>
+   <span>Fuel economy:</span><input type ="number" id="FuelEco" value="0" min="0"> <span> L /100km</span>
+   <br>
+    <br>
+   
+    <label for="fuelType">Choose fuel type:</label>
+    <select id="FT" name="FT">
+      <option value="petrol">Petrol</option>
+      <option value="diesel">Diesel</option>
+    </select>
+  
+   <button onclick="printEnergy()" id="B1"> Calculate</button>
+    
+
+    <p>
+       <span>Litres Used (L): </span> <span id="ANS1"> </span><span></span>
+       <br>
+       <br>
+       <span>Energy Used (kWh): </span> <span id="ANS2"> </span><span></span>
+       <br>
+       <br>
+       <span>Cost (ZAR): </span> <span id="ANS3"> </span><span></span>
+   </p>
+
+        
+
+        <div class="social-links">
+            
+            <a href="#"><i class='bx bxl-facebook'></i></a>
+            <a href="#"><i class='bx bxl-instagram' ></i></a>
+            <a href="#"><i class='bx bxl-twitter' ></i></a>
+            <a href="#"><i class='bx bxl-linkedin-square'></i></a>
+
+    </div>
+        
+    </div>
+
+    <script>
+        var menuList = document.getElementById("menuList");
+
+        menuList.style.maxHeight = "0px";
+
+        function togglemenu(){
+            if(menuList.style.maxHeight =="0px")
+            {
+                menuList.style.maxHeight = "150px"
+            }
+            else
+            {
+                menuList.style.maxHeight = "0px"
+            }
+        }
+    </script>
+
+    <script src="/Javascript/calculator.js"></script>
+    
+</body>
+</html>
