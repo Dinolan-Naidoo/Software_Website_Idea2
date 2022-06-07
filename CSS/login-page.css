@@ -213,6 +213,10 @@ form .btn input[type="submit"]{
   color: rgb(5, 190, 5);
 }
 
+#Logo{
+  width: 1.7rem;
+}
+
 .menu-icon{
   width: 25px;
   cursor: pointer;

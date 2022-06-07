@@ -24,13 +24,17 @@
 
 .logo{
     font-size: 2.2rem;
-    width: 400px;
+    width: 23.5rem;
     cursor:pointer;
     margin:20px 0;
 }
 
 .logo span{
     color: rgb(5, 190, 5);
+}
+
+#Logo{
+    width: 1.7rem;
 }
 
 .menu-icon{
