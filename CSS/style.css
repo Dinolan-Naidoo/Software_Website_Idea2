@@ -171,6 +171,7 @@ button:hover{
 
 
  .cardBx{
+     
     display: flex;
     flex-direction: column;
     justify-content: space-between;
