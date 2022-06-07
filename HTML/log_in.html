@@ -8,7 +8,30 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
    <body>
+
+      
+
+
+      <div class="container">
+         <div class="navbar">
+            <!--<img src="/Images/logo_1_46.jpg" alt=""  class="logo">--> 
+            <h1 class="logo"> NEW ERA <span>SOFTWARE</span> </h1>
+             <nav>
+                 <ul id="menuList">
+                     <li> <a href="/HTML/index.html">Home </a></li>
+                     <li> <a href="/HTML/calculator.html">Calculator </a></li>
+                     <li> <a href="/HTML/log_in.html">Log in </a></li>
+                     <li> <a href="/HTML/help.html">Help </a></li>
+                 </ul>
+ 
+             </nav>
+             <img src="/Images/menu_33.jpg" alt=""  class="menu-icon" onclick="togglemenu()">
+         </div>
+      </div>
+
       <div class="wrapper">
+
+         
          <div class="title-text">
             <div class="title login">
                Login Form
@@ -62,6 +85,8 @@
             </div>
          </div>
       </div>
+
+     
       <script>
          const loginText = document.querySelector(".title-text .login");
          const loginForm = document.querySelector("form.login");
@@ -80,6 +105,21 @@
            signupBtn.click();
            return false;
          });
+
+         var menuList = document.getElementById("menuList");
+
+        menuList.style.maxHeight = "0px";
+
+        function togglemenu(){
+            if(menuList.style.maxHeight =="0px")
+            {
+                menuList.style.maxHeight = "150px"
+            }
+            else
+            {
+                menuList.style.maxHeight = "0px"
+            }
+        }
       </script>
    </body>
 </html>
