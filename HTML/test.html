@@ -1,0 +1,207 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+
+
+function CalculateLitres(distance, fuelE)
+{
+   var litersUsed = (distance * fuelE)/100;
+
+   return litersUsed;
+
+
+}
+
+function CalculateEnergy(litres)
+{
+   var energyUsed = litres * 8.9;
+
+   return energyUsed;
+
+   
+}
+
+function CalculateCost(litres)
+{
+    var cost = litres * 21.465;
+    return cost;
+}
+
+function CalculateCostElec(energy)
+{
+    var cost = energy * 1.46;
+    return cost;
+}
+
+
+document.addEventListener('DOMContentLoaded',() => {
+    document
+    .getElementById('FT')
+    .addEventListener('input',handleSelect);
+});
+let choices =[];
+function handleSelect(ev)
+{
+    let select = ev.target;
+    console.log(select.value);
+    
+
+   
+      choices.push(select.selectedOptions[0].value);
+    
+
+    console.log(choices);
+
+   
+   
+}
+
+
+var energy=0;
+
+const array = [];
+
+function printEnergy() {
+   var x = document.getElementById("Distance").valueAsNumber;
+   var y = document.getElementById("FuelEco").valueAsNumber;
+   if(x < 0 || y < 0)
+   {
+       window.alert("Please enter a positive number")
+   }
+   else {
+    var litres = CalculateLitres(x,y);
+
+    document.getElementById("ANS1").innerHTML = litres;
+
+    energy = CalculateEnergy(litres);
+    document.getElementById("ANS2").innerHTML = energy;
+ 
+    var cost = CalculateCost(litres);
+    document.getElementById("ANS3").innerHTML = cost;
+
+    var costElec = CalculateCostElec(energy);
+    document.getElementById("ANS4").innerHTML = costElec;
+
+   array[0] = energy;
+   array[1]= cost;
+   array[2] = costElec;
+
+   google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['RUNS', 'Energy(kwH)', 'Fuel Cost (ZAR)', 'Electric Cost (ZAR)'],
+          ['1',array[0] ,array[1] , array[2]],
+          ['2', 1170, 460, 250],
+          ['3', 660, 1120, 300],
+          ['4', 1030, 540, 350]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Company Performance',
+            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+          }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+  
+
+
+
+    return energy;
+    
+    
+
+   }
+
+ }
+
+ 
+
+      
+    </script>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="navbar">
+         <!--<img src="/Images/logo_1_46.jpg" alt=""  class="logo">--> 
+         <h1 class="logo"> NEW ERA<span> SOFTWARE</span> </h1>
+          <nav>
+              <ul id="menuList">
+                  <li> <a href="/HTML/index.html">Home </a></li>
+                  <li> <a href="/HTML/calculator.html">Calculator </a></li>
+                  <li> <a href="/HTML/log_in.html">Log in </a></li>
+                  <li> <a href="/HTML/help.html">Help </a></li>
+              </ul>
+  
+          </nav>
+          <img src="/Images/menu_33.jpg" alt=""  class="menu-icon" onclick="togglemenu()">
+      </div>
+  
+  <h1>Calculate Energy</h1>
+  
+  <div class="inputs">
+      <span>Distance:</span> <input type ="number" id="Distance" value="0" min="0"><span> km</span>
+  <br>
+  <br>
+  <span>Fuel economy: </span><input type ="number" id="FuelEco" value="0" min="0"> <span> L /100km</span>
+  <br>
+  <br>
+  
+  <label for="fuelType" id="label">Choose fuel type:</label>
+  <select id="list" onchange="getSelectedValue();">
+    <option value="petrol">Petrol</option>
+    <option value="diesel">Diesel</option>
+  </select>
+  
+  </div>
+  
+  <div class="buttonClass">
+      <button onclick="printEnergy()" id="B1"> Calculate</button>
+  </div>
+  
+  
+  
+  
+  <p id="outputs">
+     <span>Litres Used (L): </span> <span id="ANS1"> </span><span></span>
+     <br>
+     <br>
+     <span>Energy Used (kWh): </span> <span id="ANS2"> </span><span></span>
+     <br>
+     <br>
+     <span>Cost (ZAR): </span> <span id="ANS3"> </span><span></span>
+     <br>
+     <br>
+     <span>Cost for electricity (ZAR): </span> <span id="ANS4"> </span><span></span>
+     
+  </p>
+  <canvas id="myCanvas" style="background: white;"></canvas>
+    <legend for="myCanvas"></legend>
+    
+  
+      
+  
+      <div class="social-links">
+          
+          <a href="#"><i class='bx bxl-facebook'></i></a>
+          <a href="#"><i class='bx bxl-instagram' ></i></a>
+          <a href="#"><i class='bx bxl-twitter' ></i></a>
+          <a href="#"><i class='bx bxl-linkedin-square'></i></a>
+  
+  </div>
+      
+  </div>
+    <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
+  </body>
+</html>

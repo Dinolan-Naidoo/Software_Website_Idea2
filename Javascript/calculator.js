@@ -13,6 +13,8 @@ function CalculateEnergy(litres)
    var energyUsed = litres * 8.9;
 
    return energyUsed;
+
+   
 }
 
 function CalculateCost(litres)
@@ -21,9 +23,9 @@ function CalculateCost(litres)
     return cost;
 }
 
-function CalculateCost1(litres)
+function CalculateCostElec(energy)
 {
-    var cost = litres * 23.956;
+    var cost = energy * 1.46;
     return cost;
 }
 
@@ -51,27 +53,49 @@ function handleSelect(ev)
 }
 
 
+var energy=0;
 
-   
-
+const array = [];
 
 function printEnergy() {
    var x = document.getElementById("Distance").valueAsNumber;
    var y = document.getElementById("FuelEco").valueAsNumber;
-   var litres = CalculateLitres(x,y);
+   if(x < 0 || y < 0)
+   {
+       window.alert("Please enter a positive number")
+   }
+   else {
+    var litres = CalculateLitres(x,y);
 
     document.getElementById("ANS1").innerHTML = litres;
 
    
-    var energy = CalculateEnergy(litres);
+    energy = CalculateEnergy(litres);
     document.getElementById("ANS2").innerHTML = energy;
  
     var cost = CalculateCost(litres);
     document.getElementById("ANS3").innerHTML = cost;
+
+    var costElec = CalculateCostElec(energy);
+    document.getElementById("ANS4").innerHTML = costElec;
+
+   array[0] = energy;
+   array[1]= cost;
+   array[2] = costElec;
+   
+
+    return energy;
+
+   }
+
+
+
+
+   
+  
  
    
    
  }
-
 
 
