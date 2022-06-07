@@ -141,6 +141,23 @@ button:hover{
 
 }
 
+#Demo{
+    color: rgb(5, 190, 5);
+    font-size: 1.8rem;
+    text-decoration: none;
+    background: rgba(199, 199, 199, 0.583);
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+    border: 2px solid rgb(255, 255, 255);
+    transition: 0.2s ease-in-out;
+}
+
+#Demo:hover{
+    color: rgb(30, 255, 34);
+    background: rgba(165, 165, 165, 0.583);
+    border: 2px solid rgb(30, 255, 34);
+}
+
 /*
 .colour-box{
     position: absolute;
