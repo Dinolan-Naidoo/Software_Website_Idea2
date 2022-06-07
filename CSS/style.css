@@ -71,7 +71,24 @@ nav ul li a:hover{
     justify-content: space-between;
     align-items: center;
     margin: 100px 0;
+    animation-duration: 2s;
+   animation-name: slidein;
 }
+
+
+@keyframes slidein {
+    from {
+      margin-left: 80%;
+      width: 100%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+
+
 
 .col-1{
     flex-basis: 40%;
@@ -204,7 +221,7 @@ button:hover{
 
 }
  .cardBx .card{
-    width: 30%;
+    width: 25%;
     padding: 15px 25px;
     
     border: 2px solid rgb(255, 255, 255);
@@ -238,6 +255,26 @@ button:hover{
 .cardBx .card h4{
     color: white;
 
+}
+
+#help-box{
+    animation-duration: 2s;
+animation-name: slidein;
+
+}
+
+
+
+@keyframes slidein {
+ from {
+   margin-left: 80%;
+   width: 100%;
+ }
+
+ to {
+   margin-left: 0%;
+   width: 100%;
+ }
 }
 
 

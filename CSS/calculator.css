@@ -13,8 +13,21 @@
     padding-right: 6%;
     box-sizing: border-box;
     overflow: hidden;
+    animation-duration: 2s;
+    animation-name: slidein;
 }
 
+@keyframes slidein {
+    from {
+      margin-left: -50%;
+      width: 100%;
+    }
+  
+    to {
+      margin-right: 0%;
+      width: 100%;
+    }
+  }
 
 .navbar{
     width: 100%;
