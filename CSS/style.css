@@ -263,6 +263,10 @@ animation-name: slidein;
 
 }
 
+#video{
+    padding-left: 20%;
+}
+
 
 
 @keyframes slidein {
