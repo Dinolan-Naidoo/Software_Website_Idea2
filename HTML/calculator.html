@@ -62,14 +62,7 @@ function CalculateCostDiesel(litres)
     return cost;
 }
 
-function CalculatePetrolCostElec(energy)
-{
-    var temp = energy * 1.46;
-    var cost = parseFloat(temp.toFixed(2));
-    
-    return cost;
-}
-function CalculateDieselCostElec(energy)
+function CalculateCostElec(energy)
 {
     var temp = energy * 1.46;
     var cost = parseFloat(temp.toFixed(2));
@@ -116,7 +109,7 @@ function printEnergy() {
         document.getElementById("ANS2").innerHTML = energy;
         var cost = CalculateCostPetrol95(litres);
         document.getElementById("ANS3").innerHTML = cost;
-        var costElec = CalculatePetrolCostElec(energy);
+        var costElec = CalculateCostElec(energy);
         document.getElementById("ANS4").innerHTML = costElec;
     }
     else if(val == "petrol93")
@@ -125,7 +118,7 @@ function printEnergy() {
         document.getElementById("ANS2").innerHTML = energy;
         var cost = CalculateCostPetrol93(litres);
         document.getElementById("ANS3").innerHTML = cost;
-        var costElec = CalculatePetrolCostElec(energy);
+        var costElec = CalculateCostElec(energy);
         document.getElementById("ANS4").innerHTML = costElec;
     }
     else if(val == "diesel"){
@@ -133,7 +126,7 @@ function printEnergy() {
         document.getElementById("ANS2").innerHTML = energy;
         var cost = CalculateCostDiesel(litres);
         document.getElementById("ANS3").innerHTML = cost;
-        var costElec = CalculateDieselCostElec(energy);
+        var costElec = CalculateCostElec(energy);
         document.getElementById("ANS4").innerHTML = costElec;
 
     }

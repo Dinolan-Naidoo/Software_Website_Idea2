@@ -44,20 +44,14 @@ function CalculateCostDiesel(litres)
     return cost;
 }
 
-function CalculatePetrolCostElec(energy)
+function CalculateCostElec(energy)
 {
     var temp = energy * 1.46;
     var cost = parseFloat(temp.toFixed(2));
     
     return cost;
 }
-function CalculateDieselCostElec(energy)
-{
-    var temp = energy * 1.46;
-    var cost = parseFloat(temp.toFixed(2));
-    
-    return cost;
-}
+
 
 
 function Test()
@@ -93,7 +87,7 @@ function Test()
     var d1 = CalculateDieselEnergy(1);         //ANSWER should = 10
     var d2 = CalculateDieselEnergy(10);        //ANSWER should = 100
     var d3 = CalculateDieselEnergy(150);       //ANSWER should = 1500
-    var d4 = CalculateDieselEnergy(1700);      //ANSWER should = 1700
+    var d4 = CalculateDieselEnergy(1700);      //ANSWER should = 17000
     var d5 = CalculateDieselEnergy(20000);     //ANSWER should = 200 000
 
     document.getElementById("D1").innerHTML = d1;
@@ -164,11 +158,11 @@ function Test()
 
     //Cost electric for petrol = diesel 
 
-    var cE_1 = CalculatePetrolCostElec(1);        //ANSWER should = 1.46
-    var cE_2 = CalculatePetrolCostElec(15);       //ANSWER should = 21.9
-    var cE_3 = CalculatePetrolCostElec(275);      //ANSWER should = 401.5
-    var cE_4 = CalculatePetrolCostElec(1235);     //ANSWER should = 1803.1
-    var cE_5 = CalculatePetrolCostElec(25000);    //ANSWER should = 36500
+    var cE_1 = CalculateCostElec(1);        //ANSWER should = 1.46
+    var cE_2 = CalculateCostElec(15);       //ANSWER should = 21.9
+    var cE_3 = CalculateCostElec(275);      //ANSWER should = 401.5
+    var cE_4 = CalculateCostElec(1235);     //ANSWER should = 1803.1
+    var cE_5 = CalculateCostElec(25000);    //ANSWER should = 36500
 
     document.getElementById("cE_1").innerHTML = cE_1;
     document.getElementById("cE_2").innerHTML = cE_2;
