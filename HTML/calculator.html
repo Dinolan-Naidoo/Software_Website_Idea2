@@ -173,6 +173,8 @@ function printEnergy() {
    }
 
  }
+
+
       
   </script>
 
@@ -242,7 +244,7 @@ function printEnergy() {
 
 
 
-  <div id="columnchart_material" style="width: 1300px; height: 500px;"></div>
+  <div id="columnchart_material" ></div>
   
 
     
@@ -254,9 +256,26 @@ function printEnergy() {
         <a href="#"><i class='bx bxl-twitter' ></i></a>
         <a href="#"><i class='bx bxl-linkedin-square'></i></a>
 
-</div>
+  </div>
     
 </div>
+
+<script>
+   var menuList = document.getElementById("menuList");
+
+menuList.style.maxHeight = "0px";
+
+function togglemenu(){
+    if(menuList.style.maxHeight =="0px")
+    {
+        menuList.style.maxHeight = "150px"
+    }
+    else
+    {
+        menuList.style.maxHeight = "0px"
+    }
+}
+</script>
 
   
 </body>

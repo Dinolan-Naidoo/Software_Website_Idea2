@@ -247,3 +247,41 @@ nav ul li a{
 nav ul li a:hover{
   color: rgb(5, 190, 5);
 }
+
+
+@media only screen and (max-width:700px){
+
+  .logo{
+      font-size: 1.7rem;
+  }
+
+  nav ul{
+      width: 100%;
+      background:linear-gradient(rgb(0, 107, 0), rgb(52, 216, 40)) ;
+      position: absolute;
+      top: 75px;
+      right:0;
+      z-index: 2;
+  }
+
+  nav ul li{
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 10px;
+  }
+
+  nav ul li a{
+      color:#fff ;
+  }
+
+  .menu-icon{
+      display: block;
+  }
+
+  #menuList{
+      overflow: hidden;
+      transition: 0.5s;
+  }
+
+  
+}
